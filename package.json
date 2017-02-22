@@ -1,7 +1,7 @@
 {
   "name": "fnq",
   "description": "[Function Queue] - Queue functions to be run in guaranteed order (async)",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Sebastian Herrlinger <sebastian@kosmokommando.com>",
   "license": "MIT",
   "repository": {
