@@ -10,10 +10,10 @@
   },
   "homepage": "https://github.com/kommander/fnq.js",
   "devDependencies": {
-    "mocha": "~1.10.0",
-    "expect.js": "~0.2.0",
+    "expect.js": "^0.3.1",
+    "mocha": "^3.2.0",
     "should": "*",
-    "sinon": "~1.7.2"
+    "sinon": "^1.17.1"
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha --require should --reporter tap"
@@ -28,6 +28,6 @@
   ],
   "main": "./index.js",
   "engines": {
-    "node": ">= 0.8.0"
-  }
+    "node": ">= 6.9.4"
+  },
 }
