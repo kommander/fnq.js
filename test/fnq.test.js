@@ -22,6 +22,22 @@ describe('fnq', function(){
 
     //
     //
+    it('returns an instance that has an individual q', function(){
+      const q1 = fnq(false);
+      const q2 = fnq(false);
+
+      q1.push(() => {
+        throw new Error('should not get here')
+      });
+      q2.push(() => {});
+
+      q2.run();
+
+      expect(q1).to.have.property('length', 1);
+    });
+
+    //
+    //
     it('should run automatically by default', function(done){
       var q = fnq();
 
@@ -39,7 +55,7 @@ describe('fnq', function(){
 
       q.push(function(next){
         next();
-      });  
+      });
 
       q.push(function(){
         done();
@@ -52,7 +68,7 @@ describe('fnq', function(){
   //
   //
   describe('#push', function(){
-    
+
     //
     //
     it('should add a function to the queue with arguments to execute', function(done){
@@ -93,10 +109,10 @@ describe('fnq', function(){
         next();
       });
 
-      q.push(spy);  
+      q.push(spy);
 
       expect(ran).to.be(false);
-      
+
       q.push(function(){
         expect(spy.callCount).to.be(1);
         done();
@@ -107,5 +123,5 @@ describe('fnq', function(){
 
   });
 
- 
+
 });
